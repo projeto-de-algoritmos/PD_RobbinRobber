@@ -1,6 +1,6 @@
-# XXXXXXXXXXX
+# Robbin Robber
 
-**Conteúdo da Disciplina**: Grafos 2<br>
+**Conteúdo da Disciplina**: Algoritmos Ambiciosos<br>
 
 ## Alunos
 
@@ -11,7 +11,9 @@
 
 ## Sobre
 
+Robbin Robber Jr. é um ladrão de fortunas. Procurado pela INTERPOL, ele nunca repete a cidade que rouba e nunca rouba mais do que lhe convém. Sagaz, não? 
 
+No jogo deste projeto, você é o Robbin. Procure pelas fortunas no mapa. Após descobrir todas, observe o algoritmo Knapsack preencher a sua mochila, ponderando os pesos e os valores dos objetos valiosos encontrados.
 
 ## Screenshots
 
