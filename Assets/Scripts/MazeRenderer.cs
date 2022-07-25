@@ -22,11 +22,15 @@ public class MazeRenderer : MonoBehaviour
     [SerializeField]
     private Transform floorPrefab = null;
 
+    [SerializeField]
+    private GameObject fortunePrefab = null;
+
     // Start is called before the first frame update
     void Start()
     {
         var maze = MazeGenerator.Generate(width, height);
         Draw(maze);
+        RenderFortune();
     }
 
     private void Draw(WallState[,] maze)
@@ -83,7 +87,16 @@ public class MazeRenderer : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    private void RenderFortune()
+    {
+
+        for(int i = 0; i<5; i++) 
+        {
+            var position = new Vector3(Random.Range(-width/2, width/2), 0.2f, Random.Range(-height/2, height/2));
+            Instantiate(fortunePrefab, position, Quaternion.identity);
+        }
+    }
+
     void Update()
     {
 
