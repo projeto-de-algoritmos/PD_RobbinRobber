@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private GameManager _gameManager;
+    private MazeRenderer _mazeRenderer;
     private int i = 0;
+
     const int n = 4;
     const int maxCapacity = 50;
     int [,] data = new int [6, 51];
@@ -18,6 +21,11 @@ public class Player : MonoBehaviour
     
     fortuneACK[] fortune = new fortuneACK[5];
 
+    private void Start()
+    {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
     public void KnapSack(int price, int weight) {
 
         if (i<5) 
@@ -25,9 +33,9 @@ public class Player : MonoBehaviour
             fortune[i].price = price;
             fortune[i].weight = weight;
 
-            Debug.Log("i: " + i);
-            Debug.Log("Price: " + fortune[i].price);
-            Debug.Log("Weight: " + fortune[i].weight);
+            //Debug.Log("i: " + i);
+            //Debug.Log("Price: " + fortune[i].price);
+            //Debug.Log("Weight: " + fortune[i].weight);
 
             i++;
         }
@@ -35,7 +43,7 @@ public class Player : MonoBehaviour
         if (i==5) 
         {
             //pausa o jogo
-            
+            _gameManager.gameOver = true;            
 
             //mostra a mochila com a melhor combinação possível
             for(int itemIndex =0; itemIndex <=n; itemIndex++) 
@@ -79,6 +87,9 @@ public class Player : MonoBehaviour
             }
 
             //Debug.Log("Backpack storage: " + storage);
+
+            //destroi player
+            Destroy(this.gameObject);
         }
     }
 }

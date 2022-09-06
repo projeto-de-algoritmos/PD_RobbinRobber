@@ -25,12 +25,18 @@ public class MazeRenderer : MonoBehaviour
     [SerializeField]
     private GameObject fortunePrefab = null;
 
-    // Start is called before the first frame update
+    private GameManager _gameManager;
+
     void Start()
     {
-        var maze = MazeGenerator.Generate(width, height);
-        Draw(maze);
-        RenderFortune();
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        if(_gameManager.gameOver == false) {
+            var maze = MazeGenerator.Generate(width, height);
+            Draw(maze);
+            RenderFortune();
+        }
+
     }
 
     private void Draw(WallState[,] maze)
@@ -97,8 +103,8 @@ public class MazeRenderer : MonoBehaviour
         }
     }
 
-    void Update()
+    public void DestroyMaze()
     {
-
+        Destroy(this.gameObject);
     }
 }
