@@ -1,5 +1,3 @@
-
-548]
 # Robbin Robber
 
 **Conteúdo da Disciplina**: Algoritmos Ambiciosos<br>
