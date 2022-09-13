@@ -30,7 +30,7 @@ Para visualizar todos os arquivos, basta instalar o Unity, fazer o download do r
 
 ## Uso
 
-É possível abrir o executável do projeto fazendo o download do repositório, indo na pasta "XXXXX" e executando o arquivo "XXXXX". 
+É possível abrir o executável do projeto fazendo o download do repositório e executando o arquivo "RobbinRobber.exe". 
 
 ## Apresentação
 
