@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class Player : MonoBehaviour
 {
     private GameManager _gameManager;
     private MazeRenderer _mazeRenderer;
     private int i = 0;
+    public int storage = 0;
 
     const int n = 4;
     const int maxCapacity = 50;
@@ -68,9 +70,9 @@ public class Player : MonoBehaviour
 
             //Debug.Log("Max value: " + data[n, maxCapacity]);
 
+            int maxValue = data[n, maxCapacity];
             int i = n;
             int j = maxCapacity;
-            int storage = 0;
             while (i > 0 && j > 0)
             {
                 if (data[i, j] == data[i - 1, j])
@@ -88,8 +90,12 @@ public class Player : MonoBehaviour
 
             //Debug.Log("Backpack storage: " + storage);
 
-            //destroi player
+            //destroi player e labirinto
+            FindObjectOfType<MazeRenderer>().DestroyMaze();
+            FindObjectOfType<BackpackPopUp>().DisplayInfo(storage, maxCapacity, maxValue);
             Destroy(this.gameObject);
-        }
+        }     
     }
+
+
 }

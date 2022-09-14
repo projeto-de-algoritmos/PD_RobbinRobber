@@ -95,7 +95,6 @@ public class MazeRenderer : MonoBehaviour
 
     private void RenderFortune()
     {
-
         for(int i = 0; i<5; i++) 
         {
             var position = new Vector3(Random.Range(-width/2, width/2), 0.2f, Random.Range(-height/2, height/2));
